@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Wood-inspired Light Mode Colors */
+    --background: 40 20% 97%;
+    --foreground: 30 15% 15%;
+
+    /* Card and surface colors */
+    --card: 38 25% 95%;
+    --card-foreground: 30 15% 15%;
+    --popover: 38 25% 95%;
+    --popover-foreground: 30 15% 15%;
+
+    /* Primary - Rich Walnut */
+    --primary: 25 40% 35%;
+    --primary-foreground: 40 20% 98%;
+
+    /* Secondary - Oak tones */
+    --secondary: 35 30% 75%;
+    --secondary-foreground: 30 15% 15%;
+
+    /* Muted - Light wood */
+    --muted: 40 20% 90%;
+    --muted-foreground: 30 15% 45%;
+
+    /* Accent - Premium Gold */
+    --accent: 45 80% 55%;
+    --accent-foreground: 30 15% 15%;
+
+    /* Luxury Gold */
+    --gold: 45 100% 50%;
+    --gold-dark: 40 95% 40%;
+
+    /* Destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 25 40% 35%;
+
+    /* Wood texture gradients */
+    --wood-light: 40 35% 88%;
+    --wood-medium: 30 30% 65%;
+    --wood-dark: 25 40% 35%;
+    --wood-darker: 20 45% 25%;
+
+    --radius: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Wood-inspired Dark Mode Colors */
+      --background: 25 25% 10%;
+      --foreground: 40 15% 95%;
+
+      /* Card and surface colors */
+      --card: 25 20% 15%;
+      --card-foreground: 40 15% 95%;
+      --popover: 25 20% 15%;
+      --popover-foreground: 40 15% 95%;
+
+      /* Primary - Light Oak */
+      --primary: 40 35% 70%;
+      --primary-foreground: 25 25% 10%;
+
+      /* Secondary - Dark wood */
+      --secondary: 25 25% 25%;
+      --secondary-foreground: 40 15% 95%;
+
+      /* Muted - Dark wood tones */
+      --muted: 25 20% 20%;
+      --muted-foreground: 40 15% 65%;
+
+      /* Accent - Premium Gold (brighter in dark) */
+      --accent: 45 90% 60%;
+      --accent-foreground: 25 25% 10%;
+
+      /* Luxury Gold */
+      --gold: 45 100% 60%;
+      --gold-dark: 45 95% 50%;
+
+      /* Destructive */
+      --destructive: 0 65% 45%;
+      --destructive-foreground: 40 15% 95%;
+
+      /* Borders and inputs */
+      --border: 25 20% 25%;
+      --input: 25 20% 25%;
+      --ring: 40 35% 70%;
+
+      /* Wood texture gradients */
+      --wood-light: 35 25% 40%;
+      --wood-medium: 30 30% 30%;
+      --wood-dark: 25 35% 20%;
+      --wood-darker: 20 40% 12%;
+    }
+  }
+
+  .dark {
+    /* Wood-inspired Dark Mode Colors */
+    --background: 25 25% 10%;
+    --foreground: 40 15% 95%;
+
+    /* Card and surface colors */
+    --card: 25 20% 15%;
+    --card-foreground: 40 15% 95%;
+    --popover: 25 20% 15%;
+    --popover-foreground: 40 15% 95%;
+
+    /* Primary - Light Oak */
+    --primary: 40 35% 70%;
+    --primary-foreground: 25 25% 10%;
+
+    /* Secondary - Dark wood */
+    --secondary: 25 25% 25%;
+    --secondary-foreground: 40 15% 95%;
+
+    /* Muted - Dark wood tones */
+    --muted: 25 20% 20%;
+    --muted-foreground: 40 15% 65%;
+
+    /* Accent - Premium Gold (brighter in dark) */
+    --accent: 45 90% 60%;
+    --accent-foreground: 25 25% 10%;
+
+    /* Luxury Gold */
+    --gold: 45 100% 60%;
+    --gold-dark: 45 95% 50%;
+
+    /* Destructive */
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 40 15% 95%;
+
+    /* Borders and inputs */
+    --border: 25 20% 25%;
+    --input: 25 20% 25%;
+    --ring: 40 35% 70%;
+
+    /* Wood texture gradients */
+    --wood-light: 35 25% 40%;
+    --wood-medium: 30 30% 30%;
+    --wood-dark: 25 35% 20%;
+    --wood-darker: 20 40% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-effect {
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
+  }
+
+  .wood-gradient {
+    background: linear-gradient(135deg, hsl(var(--wood-medium)), hsl(var(--wood-dark)));
+  }
+}
